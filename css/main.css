@@ -21,6 +21,15 @@ input, select {
 	vertical-align: middle;
 }
 
+.flashable {
+	padding: 5px 10px;
+	transition: background 0.5s;
+}
+
+.flashable.flash {
+	background: rgba(0, 0, 0, .18);
+}
+
 details {
 	font-size: 60%;
 }

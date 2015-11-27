@@ -19,7 +19,12 @@ function display(data) {
 				.replace('.', ',')
 		}
 
+		var tcn = target.className
 		target.textContent = value
+		target.className = tcn + ' flash'
+		setTimeout(function(){
+			target.className = tcn
+		}, 500)
 	})
 
 	setErrorVisible(false)
