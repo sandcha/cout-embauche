@@ -85,8 +85,19 @@ function buildOpenFiscaQueryURL(additionalParameters) {
 		].filter(function(element) {
 			return element !== ''}
 		)
+	var action = form.action
+	// If the computation should start from the net salary instead of the brut (base) salary
+	if (!window.netReformArghUneVariableGlobale && queryStringBlocks[0].indexOf('salaire_net_voulu') > -1){
+	// then we only want to retrieve the salaire_de_base_calcule
+		action = action.split('/formula/')[0] + '/formula/salaire_de_base_calcule'
+	}
 
-	return form.action + '?' + queryStringBlocks.join('&')
+	if (window.netReformArghUneVariableGlobale != null){
+		queryStringBlocks.push('salaire_de_base=' + window.netReformArghUneVariableGlobale)
+		window.netReformArghUneVariableGlobale = null
+	}
+
+	return action + '?' + queryStringBlocks.join('&')
 }
 
 /** Computes values based on the current main form state and the given additional parameters.
@@ -115,6 +126,7 @@ function get(additionalParameters, callback) {
 	request.onerror = callback.bind(null, request)
 
 	request.open('GET', buildOpenFiscaQueryURL(additionalParameters))
+	request.setRequestHeader('x-OpenFisca-Extensions', 'de_net_a_brut')
 	request.send()
 }
 
@@ -126,6 +138,14 @@ function update() {
 	get({
 		contrat_de_travail_debut: today.getFullYear() + '-' + (today.getMonth() + 1),
 	}, function(error, values, response) {
+		if (values.salaire_de_base_calcule != null){
+			netReformArghUneVariableGlobale = values.salaire_de_base_calcule
+			document.querySelector('#value-brut-ou-net').textContent = values.salaire_de_base_calcule.toFixed(1)
+			document.querySelector('#value-brut-ou-net').dataset.source = ''
+			update()
+			return
+		}
+
 		if (error) {
 			if (response && response.error)
 				return UI.showError(response.error)

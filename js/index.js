@@ -13,6 +13,13 @@ function bindToForm(form) {
 	handleBasicFormChanges()
 
 	var handleFormChanges = function(event) {
+		if (event.target.dataset.yo === 'brut-ou-net'){
+			document.querySelector('#brut-ou-net').textContent =
+				{salaire_de_base: 'net', salaire_net_voulu: 'brut'}[event.target.value]
+			if (event.target.value === 'salaire_de_base'){
+				document.querySelector('#value-brut-ou-net').dataset.source = 'salaire_net_a_payer'
+			}
+		}
 		switch (event.target.name) {
 		case 'code_postal_entreprise':
 			handlePostalCodeInput(event.target.value, handleBasicFormChanges)
