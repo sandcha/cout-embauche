@@ -1,0 +1,24 @@
+- id: ags
+  nom: AGS
+  type: charge
+  cible: employeur
+  formulaType: proportionnel
+  plafond: true
+
+- id: agff_employeur
+  nom: AGFF
+  cible: employeur
+  type: charge
+
+- id: agff_salarie
+  nom: AGFF
+  type: charge
+  cible: salarié
+  formulaType: proportionnel
+  plafond: true
+
+- id: credit_impot_competitivite_emploi
+  nom: Crédit d'impôt pour la compétitivité et l'emploi (CICE)
+  type: aide
+  differe: true
+  cible: employeur
