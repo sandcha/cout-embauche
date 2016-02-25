@@ -1,0 +1,7 @@
+- id: ags
+  name: AGS
+  cible: employeur
+
+- id: agff_employeur
+  name: AGFF
+  cible: employeur
