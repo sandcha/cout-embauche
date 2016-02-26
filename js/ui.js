@@ -3,8 +3,67 @@ module.exports = {
 	showError: showError,
 	reflectParameterChange: reflectParameterChange,
 	displayCommunesFetchResults: displayCommunesFetchResults,
+	collectInput: collectInput,
+	getForm: getForm,
 }
 
+function getForm(){
+	return document.querySelector('.SGMAPembauche form')
+}
+
+function collectInput(form) {
+	var input = collectFormFields(form)
+
+	input = addBooleanParameters(input)
+
+	// Additional parameters
+	var today = new Date()
+	input['contrat_de_travail_debut'] = today.getFullYear() + '-' + (today.getMonth() + 1)
+
+	return input
+}
+
+// Collect form fields that will be the base of the API input
+function collectFormFields(form) {
+	var result = {},
+		elements = form.elements
+
+	// switch to reduce
+	Array.prototype.forEach.call(elements, function(element) {
+		if (! element.name)
+			return
+
+		var value = element.value
+
+		if (element.type == 'number')
+			value = Number(element.value.replace(',', '.'))	// IE doesn't support locale number formats
+
+		/* We are simulating a recruitment,
+		hence requesting salaries with the new size of the entreprise */
+		if (element.name == 'effectif_entreprise')
+			value ++
+
+		result[element.name] = value
+	})
+
+	return result
+}
+
+function addBooleanParameters(input) {
+
+	var boolean_parameters = {
+		employee: [ 'stagiaire', 'apprenti' ],
+	}
+
+	for (var provider in boolean_parameters) {
+		var key = document.querySelector('[data-provides="' + provider + '"]').value
+
+		if (boolean_parameters[provider].indexOf(key) > -1)
+			input[key] = true
+	}
+
+	return input
+}
 
 function display(data) {
 	Object.keys(data).forEach(function(toSet) {
