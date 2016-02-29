@@ -69,3 +69,12 @@ function get(additionalParameters, callback) {
 
 	request(input, baseUrl, callback)
 }
+
+/** Creates an OpenFisca URL to the /formula endpoint, based on the current main form state and the given additional parameters.
+*
+*@param		{Object}	[additionalParameters]	An object whose properties will be appended to the URL as query-string parameters.
+*@returns	{String}	The URL for the OpenFisca query.
+*/
+function buildOpenFiscaQueryURL(additionalParameters) {
+
+}
