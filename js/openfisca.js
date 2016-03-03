@@ -84,9 +84,13 @@ function buildOpenFiscaQueryURL(additionalParameters) {
 			serializeObject(additionalParameters),
 		].filter(function(element) {
 			return element !== ''}
-		)
+		),
+		action = form.action
 
-	return form.action + '?' + queryStringBlocks.join('&')
+	if (document.querySelector('#select-brut-ou-net').value === 'salaire_net')
+		action = action + '+salaire_de_base'
+
+	return action + '?' + queryStringBlocks.join('&')
 }
 
 /** Computes values based on the current main form state and the given additional parameters.
@@ -114,7 +118,14 @@ function get(additionalParameters, callback) {
 
 	request.onerror = callback.bind(null, request)
 
+	document.querySelector('#salaire').name = document.querySelector('#select-brut-ou-net').value
+
 	request.open('GET', buildOpenFiscaQueryURL(additionalParameters))
+
+	if (document.querySelector('#select-brut-ou-net').value === 'salaire_net')
+		// An OpenFisca reform is needed to compute the 'salaire brut' from the 'salaire net'
+		request.setRequestHeader('x-OpenFisca-Extensions', 'de_net_a_brut')
+
 	request.send()
 }
 
