@@ -72,7 +72,10 @@ function reflectParameterChange(event) {
 		var modifier = event.target.attributes['data-sets'].value.split('@')	// example: '#salaire@name'; first part is selector, second is attribute to set
 
 		Array.prototype.forEach.call(document.querySelectorAll(modifier[0]), function(elementToUpdate) {
-			elementToUpdate[modifier[1]] = event.target.value
+			// Not sure how selectedOptions is supported...
+			// var selectedOption = event.target.selectedOptions[0]
+			var selectedOption = event.target.querySelector('option[value="' + event.target.value + '"]')
+			elementToUpdate[modifier[1]] = selectedOption.dataset['setsValue'] || selectedOption.value
 		})
 	} else {
 		var data = {},

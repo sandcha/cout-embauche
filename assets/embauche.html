@@ -30,9 +30,14 @@
 						&nbsp;€
 					</label>
 					<span class="input-help">Rémunération totale temps plein<br>
-						<em>(min. <span data-source="smic_proratise" data-round>1467</span>)</em>, dont primes.</span>
+						<em>(min. <span data-source="smic_proratise" data-round>1467</span>)</em>, dont primes.
+					</span>
+					<select id="select-brut-ou-net" data-sets="#type-salaire-calcule@textContent">
+						<option data-sets-value="net" value="salaire_de_base">brut</option>
+						<option data-sets-value="brut" value="salaire_net">net</option>
+					</select>
 					&nbsp;
-					<span>brut par mois</span>
+					<span>par mois</span>
 				</fieldset>
 				<br>
 				sur la&nbsp;<label for="code_postal_entreprise">commune</label>&nbsp;de
@@ -94,7 +99,7 @@
 		</p>
 		<p>
 			Mon <span data-source="employee">salarié·e</span>
-			touchera <span data-source="salaire_net_a_payer" data-round title="Salaire net">…</span>&nbsp;€
+			touchera <span id="salaire-calcule" data-source="salaire_net_a_payer" data-round title="Salaire net">…</span>&nbsp;€&nbsp;<span id="type-salaire-calcule">net</span>
 			par <span data-source="period">mois</span>.
 		</p>
 	</section>
