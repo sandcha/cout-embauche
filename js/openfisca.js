@@ -118,7 +118,10 @@ function get(additionalParameters, callback) {
 
 	request.onerror = callback.bind(null, request)
 
-	document.querySelector('#salaire').name = document.querySelector('#select-brut-ou-net').value
+	var selectedSalaire = document.querySelector('#select-brut-ou-net').value
+	document.querySelector('#salaire').name = selectedSalaire
+	document.querySelector('#salaire-calcule').dataset.source =
+		{'salaire_de_base': 'salaire_net', 'salaire_net': 'salaire_de_base'}[selectedSalaire]
 
 	request.open('GET', buildOpenFiscaQueryURL(additionalParameters))
 
