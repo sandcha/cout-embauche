@@ -87,7 +87,7 @@ function buildOpenFiscaQueryURL(additionalParameters) {
 		),
 		action = form.action
 
-	if (document.querySelector('#select-brut-ou-net').value === 'salaire_net')
+	if (document.querySelector('#select-brut-ou-net').value === 'salaire_net_a_payer')
 		action = action + '+salaire_de_base'
 
 	return action + '?' + queryStringBlocks.join('&')
@@ -121,11 +121,11 @@ function get(additionalParameters, callback) {
 	var selectedSalaire = document.querySelector('#select-brut-ou-net').value
 	document.querySelector('#salaire').name = selectedSalaire
 	document.querySelector('#salaire-calcule').dataset.source =
-		{'salaire_de_base': 'salaire_net', 'salaire_net': 'salaire_de_base'}[selectedSalaire]
+		{'salaire_de_base': 'salaire_net_a_payer', 'salaire_net_a_payer': 'salaire_de_base'}[selectedSalaire]
 
 	request.open('GET', buildOpenFiscaQueryURL(additionalParameters))
 
-	if (document.querySelector('#select-brut-ou-net').value === 'salaire_net')
+	if (document.querySelector('#select-brut-ou-net').value === 'salaire_net_a_payer')
 		// An OpenFisca reform is needed to compute the 'salaire brut' from the 'salaire net'
 		request.setRequestHeader('x-OpenFisca-Extensions', 'de_net_a_brut')
 
