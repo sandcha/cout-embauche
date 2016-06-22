@@ -13,7 +13,7 @@ export default class App extends Component {
 		return (
 			<Provider store={store}>
 				<div>
-					<Conversation />
+					<Conversation/>
 					<DevTools />
 				</div>
 			</Provider>

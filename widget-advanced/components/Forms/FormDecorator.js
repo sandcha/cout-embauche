@@ -60,7 +60,7 @@ export var FormDecorator = DecoratedComponent =>
 
 			if (visible) {
 				return (
-				<section className={classNames('step', {unfolded})}>
+				<section className={classNames('step', {unfolded})} >
 					{this.state.helpVisible && this.renderHelpBox()}
 					{this.renderHeader(unfolded)}
 					{unfolded &&
@@ -91,20 +91,29 @@ export var FormDecorator = DecoratedComponent =>
 
 			return (
 				<span className="form-header" onClick={headerClick}>
-				{ unfolded ? this.renderQuestion() : this.renderTitleAndAnswer()}
+				{ unfolded ? this.renderQuestion(unfolded) : this.renderTitleAndAnswer()}
 				</span>
 			)
 		}
 
-		renderQuestion = () =>
+		renderQuestion(unfolded) {
+			let style = unfolded ? {
+				color: window.couleurPrincipale,
+				background: 'none',
+				borderColor: window.couleurPrincipale,
+			} : {}
+			return (
 				<span>
-					<h1>{this.props.question}</h1>
+					<h1 style={style}>
+						{this.props.question}
+					</h1>
 					{this.props.helpText &&
 						<span
 						className="question-mark"
 						onClick={() => this.setState({helpVisible: true})}>?</span>
 					}
 				</span>
+			)}
 
 		renderTitleAndAnswer() {
 			let {
@@ -115,7 +124,12 @@ export var FormDecorator = DecoratedComponent =>
 			} = this.props,
 				value = formState.resume.value,
 				// Show a beautiful answer to the user, rather than the technical form value
-				humanFunc = human || valueType && new valueType().human || (v => v)
+				humanFunc = human || valueType && new valueType().human || (v => v),
+				resumeStyle = {
+					color: 'white',
+					border: `1px solid ${window.couleurPrincipale}`,
+					background: window.couleurPrincipale,
+				}
 
 			return (
 				<span>
@@ -124,7 +138,7 @@ export var FormDecorator = DecoratedComponent =>
 							transitionAppear={true}
 							transitionName="answer"
 							transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
-							<span key="1" className="resume">{humanFunc(value)}</span>
+							<span key="1" className="resume" style={resumeStyle}>{humanFunc(value)}</span>
 						</ReactCSSTransitionGroup>
 				</span>)
 		}

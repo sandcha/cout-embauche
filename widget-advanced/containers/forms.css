@@ -87,13 +87,6 @@ hinting on the fact that it is a group result */
 .step.unfolded h1 {
 	cursor: default;
 }
-/* The unfolded step is the currently focused
-question : make it visible with colors */
-.step.unfolded h1 {
-	border: 1px solid #4A89DC;
-	background: none;
-	color: #4A89DC;
-}
 
 /* Our little question help icon */
 .question-mark {
@@ -136,8 +129,6 @@ question : make it visible with colors */
 	line-height: 1.8em;
 	border-radius: 1em;
 	float: right;
-	color: #4A89DC;
-	border: 1px solid #4A89DC;
 }
 .step label.radio:hover {
 	background: #4A89DC;

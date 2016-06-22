@@ -24,7 +24,7 @@ sagaMiddleware.run(rootSaga)
 const anchor = (anchor) => {
 	render(
 		<AppContainer>
-			<App store={store}/>
+			<App store={store} />
 		</AppContainer>,
 		anchor
 	)

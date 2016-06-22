@@ -15,11 +15,16 @@ class Question extends Component {
 			choices,
 			/* On radio click, just submit the form using the decorator's submit function */
 			submit,
-		} = this.props
+		} = this.props,
+			labelStyle = {
+				border: `1px solid ${window.couleurPrincipale}`,
+				color: window.couleurPrincipale,
+			}
+
 		return (
 			<span className="answer">
 				{ choices.map((choice) =>
-						( <label key={choice} className={classnames('radio', {checked: choice === chosen.value})}>
+						( <label key={choice} className={classnames('radio', {checked: choice === chosen.value})} style={labelStyle}>
 								<input
 									type="radio" {...chosen} onClick={submit(choice)}
 									value={choice} checked={choice === chosen.value ? 'checked' : ''} />

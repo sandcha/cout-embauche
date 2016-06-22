@@ -2,6 +2,54 @@ import transForms from './transForms.js'
 if (window.loadCompleteWidget)
 	var {anchor} = require('../widget-advanced/index')
 
+function lightenColor(hex, lum) {
+
+	// validate hex string
+	hex = String(hex).replace(/[^0-9a-f]/gi, '')
+	if (hex.length < 6)
+		hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2]
+
+	lum = lum || 0
+
+	// convert to decimal and change luminosity
+	var rgb = '#', c, i
+	for (i = 0; i < 3; i++) {
+		c = parseInt(hex.substr(i*2,2), 16)
+		c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16)
+		rgb += ('00'+c).substr(c.length)
+	}
+
+	return rgb
+}
+
+function renderAdvanced(color) {
+	if (color)
+		window.couleurPrincipale = color
+	anchor(document.querySelector('.advanced-simulation'))
+}
+/****************************COLORS*/
+
+
+[ ...document.querySelectorAll('.yo li') ].map(el => {
+	let color = el.dataset.color
+	el.style.background = color
+	el.addEventListener('click', () => {
+		renderAdvanced(color)
+		document.querySelector('.results > .content').style.background = color;
+		[ ...document.querySelectorAll('.results p') ].map(p=>{
+			p.style.color = 'white'
+		});
+		[ ...document.querySelectorAll('.results p span.text') ].map(p=>{
+			p.style.opacity = .7
+		})
+		document.querySelector('.results > h1').style.color = color
+	})
+})
+
+
+/*****************************/
+
+
 const getForm = () => document.querySelector('.SGMAPembauche form')
 
 function getOutputVariables() {
@@ -165,8 +213,8 @@ function handleActions() {
 		bringInputButton.disabled = false
 
 		taxDetailsSection.setAttribute('hidden', true)
-		if (advancedViewSection.children.length === 0) // The advanced view can be disabled
-			anchor(document.querySelector('.advanced-simulation'))
+		if (advancedViewSection.children.length === 0)// The advanced view can be disabled
+			renderAdvanced()
 		advancedViewSection.removeAttribute('hidden')
 
 	})
