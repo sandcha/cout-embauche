@@ -17,6 +17,47 @@ export default {
 
 	/*****************************
 	 BASIC INPUT FORM FIELDS */
+	
+	//TUNISIE
+	
+	'typeEmployé': {
+		initial: 'fonctionnaire',
+		adapt: () => ({}),
+	},
+	
+	'salaire': {
+		initial: 338,
+		adapt: (raw, value, values) => ({
+			// Use other values to determine the name of this key
+			[values['typeSalaireEntré'] == 'brut' ?
+				'salaire_de_base' :
+				'salaire_net_a_payer'
+			]: value }),
+	},
+	
+	'périodeSalaireEntré': {
+		initial: 'mois',
+		adapt: () => ({}),
+	},
+	
+	'typeSalaireEntré': {
+		initial: 'brut',
+		adapt: () => ({}),
+	},
+	
+	'statutFamilial': {
+		initial: 'celibataire',
+		adapt: () => ({}),
+	},
+	
+	'nbEnfants': {
+		initial: '0enf',
+		adapt: () => ({}),
+	},
+	
+	
+	
+	//FRANCE
 
 	/* Le type d'entreprise association 190X n'est pas défini comme une catégorie dans OpenFisca,
 	mais comme un booléen */

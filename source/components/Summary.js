@@ -46,6 +46,14 @@ export default class Summary extends Component {
 				<div className="content" style={{background: colour, color: lighterTextColour}}>
 					<div className="figures">
 						<p style={paragraphBorderStyle}>
+						
+							Tunisie
+							<br />
+							Salaire imposable : 
+							<Figure textColour={textColour} title="Salaire imposable" figure={humanize(salaire_imposable)}/>
+							<br />
+						
+						
 							Mon {labelTypeEntreprise} versera <Figure textColour={textColour} title="Salaire super-brut" figure={humanize(salaire_super_brut)}/> par mois
 							{ (salaire_super_brut != cout_du_travail) ?
 								<span>,
