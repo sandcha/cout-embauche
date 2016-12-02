@@ -4,7 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 export default ({
 	showAdvanced, toggleAdvancedSection,
 	inputTouched, inputChanged,
-	infoAlternance, themeColours: {textColourOnWhite}
+	themeColours: {textColourOnWhite}
 }) =>
 <section className="info-zone">
 	{ !showAdvanced &&
@@ -16,12 +16,12 @@ export default ({
 			transitionLeaveTimeout={700} >
 			{ !inputTouched && !inputChanged &&
 				<div key="1" className="input-tip">
-					<p>Renseignez votre situation ci-dessus</p>
+					<p>Renseignez votre situation ci-dessus.</p>
 				</div>
 			}
 			{ inputChanged &&
 				<div key="2" className="input-tip">
-					<p>Votre estimation est mise à jour à chaque changement</p>
+					<p>Votre estimation est mise à jour à chaque changement.</p>
 					<p>Pour des résultats plus précis,&nbsp;
 						<a href="#" style={{color: textColourOnWhite}}
 						id="show-advanced"
@@ -41,13 +41,6 @@ export default ({
 		title="Réinitialiser les questions supplémentaires">
 		Réinitialiser
 		</a>
-	}
-	{	infoAlternance &&
-		<span>
-			Note: pour une simulation plus fiable du cas de l'apprentissage, rendez-vous sur <a href="https://www.alternance.emploi.gouv.fr/portail_alternance/jcms/hl_5641" target="_blank">
-				le simulateur du portail de l'alternance
-			</a>
-		</span>
 	}
 
 </section>

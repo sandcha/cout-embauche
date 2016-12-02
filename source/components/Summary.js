@@ -49,24 +49,9 @@ export default class Summary extends Component {
 						
 							Tunisie
 							<br />
-							Salaire imposable : 
-							<Figure textColour={textColour} title="Salaire imposable" figure={humanize(salaire_imposable)}/>
+							Salaire imposable, IRPP, Revenu assimilé salaire après abattement. 
 							<br />
 						
-						
-							Mon {labelTypeEntreprise} versera <Figure textColour={textColour} title="Salaire super-brut" figure={humanize(salaire_super_brut)}/> par mois
-							{ (salaire_super_brut != cout_du_travail) ?
-								<span>,
-									<br />
-									ou <Figure textColour={textColour} title="Coût du travail" figure={humanize(cout_du_travail)}/>
-									&nbsp;après déduction des aides différées.
-								</span> :
-								<span>.</span>
-							}
-						</p>
-						<p style={paragraphBorderStyle}>
-							Mon salarié·e touchera <Figure textColour={textColour} title={salaireDescription} figure={humanize(salaireFigure)}/>&nbsp;
-							{salaireTitle} par mois.
 						</p>
 					</div>
 					<button	type="button"

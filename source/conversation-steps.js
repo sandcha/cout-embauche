@@ -2,7 +2,7 @@ import React from 'react'
 import { percentage, euro } from './formValueTypes.js'
 
 let	today = new Date()
-
+let smic_tnd = 338
 
 export default {
 
@@ -15,6 +15,7 @@ export default {
 		}),
 	},
 
+	
 	/*****************************
 	 BASIC INPUT FORM FIELDS */
 	
@@ -26,7 +27,7 @@ export default {
 	},
 	
 	'salaire': {
-		initial: 338,
+		initial: smic_tnd,
 		adapt: (raw, value, values) => ({
 			// Use other values to determine the name of this key
 			[values['typeSalaireEntré'] == 'brut' ?
@@ -55,58 +56,6 @@ export default {
 		adapt: () => ({}),
 	},
 	
-	
-	
-	//FRANCE
-
-	/* Le type d'entreprise association 190X n'est pas défini comme une catégorie dans OpenFisca,
-	mais comme un booléen */
-	'typeEntreprise': {
-		initial: 'entreprise',
-		adapt: raw => raw === 'entreprise_est_association_non_lucrative' && {
-			'entreprise_est_association_non_lucrative': true,
-		},
-	},
-
-	/* Nous simulons une embauche, donc nous incrémentons l'effectif */
-	'effectifEntreprise': {
-		initial: 0,
-		adapt: raw => ({'effectif_entreprise': raw + 1}),
-	},
-
-	/* Nous voulons un ratio : on multiplie donc le nombre d'heures par semaine capté par
-	 (la durée légale mensuelle divisée par la durée légale hebdomadaire) */
-	'heuresParSemaine': {
-		initial: 30,
-		adapt: raw => ({ 'heures_remunerees_volume': raw * (151.66 / 35)}),
-	},
-
-	'typeSalaireEntré': {
-		initial: 'brut',
-		adapt: () => ({}),
-	},
-
-	'salaire': {
-		initial: 2300,
-		adapt: (raw, value, values) => ({
-			// Use other values to determine the name of this key
-			[values['typeSalaireEntré'] == 'brut' ?
-				'salaire_de_base' :
-				'salaire_net_a_payer'
-			]: value }),
-	},
-
-	'tempsDeTravail': {
-		initial: 'temps_plein',
-		adapt: raw => ({'contrat_de_travail': raw}),
-	},
-
-	'categorieSalarié': {
-		initial: 'prive_non_cadre',
-		adapt: raw => ({'categorie_salarie': raw}),
-	},
-
-
 
 
 
