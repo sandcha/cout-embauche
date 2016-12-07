@@ -48,7 +48,7 @@ export function request(input) {
 		url =
 			baseUrl +
 			//(input['salaire_net_a_payer'] ? '+salaire_de_base' : '+salaire_net_a_payer') +
-			'?' +
+			'?' + 'period=2017&' +
 			serializeObject(input),
 		headers = input['salaire_net_a_payer'] ? {
 			'x-OpenFisca-Extensions': 'de_net_a_brut',

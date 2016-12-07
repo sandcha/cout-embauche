@@ -46,11 +46,12 @@ function draw(salaireDeBase, salaireNetAPayer) {
 	
 	// creation du graphique
 	return {
+	
 	    chart: {
 	      type: 'bar'
 	    },
 	    title: {
-	      text: 'Open fisca: usage de vos impôts'
+	      text: 'Imposition de : '+(salaireDeBase - salaireNetAPayer) + ' dinars'
 	    },
 	    xAxis: {
 	      categories: ['Vos impôts contribuent au']
@@ -210,8 +211,8 @@ export default class BarChart extends Component {
 		salaireNetAPayer = this.props.results.salaire_net_a_payer
 	
 		return (
-				<ReactHighcharts config = {draw(salaireImposable, salaireNetAPayer)}></ReactHighcharts>
-				//<ReactHighcharts config = {draw(5000, 4000)}></ReactHighcharts>
+				//<ReactHighcharts config = {draw(salaireImposable, salaireNetAPayer)}></ReactHighcharts>
+				<ReactHighcharts config = {draw(17710, 14700)}></ReactHighcharts>
 				)
 	}
 }

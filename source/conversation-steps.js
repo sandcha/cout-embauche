@@ -2,7 +2,7 @@ import React from 'react'
 import { percentage, euro } from './formValueTypes.js'
 
 let	today = new Date()
-let smic_tnd = 338
+let smic_tnd = 14700//338
 
 export default {
 

@@ -20,7 +20,7 @@ let selector = formValueSelector('basicInput')
 })
 export default class BasicInput extends Component {
 	render() {
-		let smic_tnd = 338
+		let smic_tnd = 14700//338
 		
 		//TN :
 		//Je suis [un/une] [fonctionnaire/employé-e/professionnel-le libéral-e].
