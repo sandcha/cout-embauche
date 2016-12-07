@@ -22,7 +22,7 @@ export default {
 	//TUNISIE
 	
 	'typeEmployé': {
-		initial: 'fonctionnaire',
+		initial: 'employe',
 		adapt: () => ({}),
 	},
 	
@@ -52,7 +52,7 @@ export default {
 	},
 	
 	'nbEnfants': {
-		initial: '0enf',
+		initial: 0,
 		adapt: () => ({}),
 	},
 	

@@ -1,0 +1,69 @@
+#Répartition du budget de l'état tunisien par année.
+
+2016:
+
+  - key: arp
+    percentage: 2 
+  - key: csm
+    percentage: 2 
+  - key: depenses_imprevues_non_reparties
+    percentage: 2
+  - key: dette_publique
+    percentage: 2
+  - key: ivd
+    percentage: 2 
+  - key: isie
+    percentage: 2 
+  - key: m_argriculture_res_hydrauliques_peche
+    percentage: 5
+  - key: m_education
+    percentage: 17
+  - key: m_enseignement_sup_recherche_scientifique
+    percentage: 8
+  - key: m_env_developpement_durable
+    percentage: 8
+  - key: m_equipement_habitat_amenagement_territoire
+    percentage: 8
+  - key: m_industrie_energie_mines
+    percentage: 8
+  - key: m_interieur
+    percentage: 5
+  - key: m_culture_sauvegarde_patrimoine
+    percentage: 1
+  - key: m_defense_nationale
+    percentage: 2
+  - key: m_femme_famille_enfance
+    percentage: 1
+  - key: m_formation_professionnelle_emploi
+    percentage: 1
+  - key: m_jeunesse_sports
+    percentage: 1
+  - key: m_justice
+    percentage: 1
+  - key: m_sante
+    percentage: 1    
+  - key: m_affaires_etrangeres
+    percentage: 1
+  - key: m_affaires_religieuses
+    percentage: 1
+  - key: m_affaires_sociales
+    percentage: 1    
+  - key: m_domaines_etat_affaires_foncieres
+    percentage: 1
+  - key: m_finances
+    percentage: 2
+  - key: m_tech_com_economie_numerique
+    percentage: 2    
+  - key: m_commerce
+    percentage: 2
+  - key: m_dev_invest_coop
+    percentage: 5
+  - key: m_tourisme_artisanat
+    percentage: 3 
+  - key: m_transport
+    percentage: 1 
+  - key: presidence_republique
+    percentage: 1      
+  - key: presidence_gouverment
+    percentage: 1 
+     

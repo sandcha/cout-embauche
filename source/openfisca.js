@@ -23,7 +23,8 @@ let serializeObject = source =>
 
 // Url pointing to an instance of the OpenFisca Web API and containing the desired output variables
 let baseUrl =
-	'https://embauche.beta.gouv.fr/openfisca/api/2/formula/' +
+	'https://api.openfisca.tn/api'
+	//OpenFisca FR : 'https://embauche.beta.gouv.fr/openfisca/api/2/formula/' +
 	// output variables are extracted from the YAML file used to display them in the UI
 	Object.keys(outputVariables)
 		.reduce((final, category) =>

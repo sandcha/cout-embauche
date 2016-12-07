@@ -33,9 +33,9 @@ export default class BasicInput extends Component {
 				
 				Je suis 
 				<Field component="select" name="typeEmployé" >
-					<option value="fonctionnaire">fonctionnaire</option>
-					<option value="employe">employé-e</option>
-					<option value="professionnel_liberal">professionnel-le libéral-e</option>
+					<option value="employe">employé-e</option>	
+					<option value="fonctionnaire">fonctionnaire</option>					
+					<option value="professionnel_liberal" disabled="true">professionnel-le libéral-e</option>
 				</Field>
 				.<br />
 				
@@ -44,7 +44,7 @@ export default class BasicInput extends Component {
 					<Field id="salaire" name="salaire" component="input" type="number"
 					min="0" max="9999999" placeholder={smic_tnd} step="any" />
 					<label htmlFor="salaire">
-						&nbsp; TND &nbsp;
+						&nbsp; Dinars Tunisiens &nbsp;
 					</label>
 				
 					<span className="input-help">
@@ -77,14 +77,8 @@ export default class BasicInput extends Component {
 				.<br />
 				
 				J&#39;ai 
-				<Field component="select" name="nbEnfants" >
-					<option value="0enf">0</option>
-					<option value="1enf">1</option>
-					<option value="2enf">2</option>
-					<option value="3enf">3</option>
-					<option value="4enf">4</option>
-					<option value="plus4enf">plus de 4</option>
-				</Field>
+				<Field id="nbEnfants" name="nbEnfants" component="input" type="number"
+					min="0" max="9999999" placeholder="0" step="any" />
 				enfant-s.<br />
 				
 			</form>
