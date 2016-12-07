@@ -39,7 +39,7 @@ export default class BasicInput extends Component {
 				</Field>
 				.<br />
 				
-				Je gagne 
+				Je touche 
 				<fieldset>
 					<Field id="salaire" name="salaire" component="input" type="number"
 					min="0" max="9999999" placeholder={smic_tnd} step="any" />
@@ -58,12 +58,7 @@ export default class BasicInput extends Component {
 						<option value="mois">mois</option>
 						<option value="an">an</option>
 					</Field>	
-					
-					<Field component="select" name="typeSalaireEntré" >
-						<option value="brut">avant</option>
-						<option value="net">après</option>
-					</Field>
-					<span>paiement de l&#39;impôt.</span>
+					<span>net d&#39;impôts et de cotisations sociales.</span>
 
 				</fieldset>
 				<br />
@@ -71,7 +66,7 @@ export default class BasicInput extends Component {
 				Je suis
 				<Field component="select" name="statutFamilial" >
 					<option value="celibataire">célibataire</option>
-					<option value="marie">marié</option>
+					<option value="marie">marié non chef de famille</option>
 					<option value="chef_de_famille">chef de famille</option>
 				</Field>
 				.<br />

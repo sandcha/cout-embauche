@@ -1,0 +1,73 @@
+﻿#Traduction des termes de l'UI Tunisie.
+
+Arabe :
+
+  - key: nb_enf
+    nameTN: عدد الأبناء
+  - key: nb_enf_sup
+    nameTN: عدد الأبناء بالتعليم العالي غير المتمتعين بمنحة
+  - key: nb_infirme
+    nameTN: عدد الأبناء المعوّقين
+  - key: nb_parents
+    nameTN: عدد الأولياء
+  - key: chef_de_famille
+    nameTN: رئيس العائلة
+  - key: bic
+    nameTN: المرابيح الصناعية والتجارية
+  - key: bic_ca_global
+    nameTN: رقم المعاملات العام (المرابيح، بيع الأصول التجارية)
+  - key: bic_res_cession
+    nameTN: النتائج (المرابيح الصناعية والتجارية، بيع الأصول التجارية )
+  - key: bic_benef_fiscal_cession
+    nameTN: النتائج الضريبية 
+  - key: bic_benef_fiscal_cession
+    nameTN: مرابيح المهن غير التجارية
+  - key: bnc_forf_benef_fiscal
+    nameTN: الربح الضريبي (على أساس قاعدة تقديرية بنسبة مائوية للمرابيح الخامة بما في ذلك الأداءات)
+  - key: beap
+    nameTN: المرابيح في قطاع الفلاحة والصيد البحري
+  - key: revenus_fonciers
+    nameTN: مداخيل العقارات المبنية
+  - key: fon_forf_bati
+    nameTN: المرابيح الصافية للعقارات المبنية 
+  - key: fon_forf_nbat
+    nameTN: المرابيح الصافية للعقارات غير المبنية 
+  - key: tspr
+    nameTN: المرتبات والأجور والجرايات والإيرادات العمرية 
+  - key: revenu_assimile_salaire
+    nameTN: قيمة الإمتيازات العينية 
+  - key: smig
+    nameTN: الأجر الأدنى الصناعي أو الفلاحي المضون
+  - key: revenu_assimile_salaire_apres_abattements
+    nameTN: الدخل الضريبي بعد طرح 10 بالمائة
+  - key: revenu_assimile_pension_apres_abattements
+    nameTN: الدخل من الجرايات بعد طرح 25 بالمائة
+  - key: rvcm
+    nameTN: المرابيح في شركات الأشخاص وما شابهها التي تحقق مداخيلا عقارية
+  - key: retr
+    nameTN: مداخيل أخرى (مداخيل متأتية من دول أجنبية ولم تخضع للضريبة هناك)
+  - key: rng
+    nameTN: الدخل الصافي العام
+  - key: deduction_famille
+    nameTN:تخفيضات كرئيس العائلة
+  - key: deduc_rente
+    nameTN: إيرادات مدفوعة بصفة وجوبية ومجانية
+  - key: assurance_vie
+    nameTN: أقساط التأمين على الحياة
+  - key: deduc_smig
+    nameTN: تخفيض إضافي للأجراء حسب الأجر الأدنى الصناعي أو الفلاحي المضمون
+  - key: rni
+    nameTN: الأجر الصافي الضريبي
+  - key: ir_brut
+    nameTN: الضريبة قبل حساب الضرائب
+  - key: irpp
+    nameTN: الضريبة على الدخل للأشخاص
+
+
+
+
+
+
+
+
+
