@@ -11,7 +11,7 @@ export default class Details extends Component {
 						.filter(category => category !== 'Sommes')
 						.map(c => this.renderCategory(c, outputVariables[c]))
 				}
-				<a href="mailto:contact@embauche.beta.gouv.fr?subject=Erreur dans les résultats du simulateur">Signaler une erreur</a>
+				<a href="mailto:contact@cahiersdelaliberte.org?subject=Erreur dans les résultats du simulateur">Signaler une erreur</a>
 			</section>
 		)
 	}

@@ -3,8 +3,8 @@
 
 Sommes:
 
-  - key: salaire_de_base
-    name: Salaire de base
+  - key: salaire_imposable
+    name: Salaire imposable
 
   - key: salaire_super_brut
     name: Salaire super brut

@@ -5,10 +5,8 @@ import { connect } from 'react-redux'
 import { change} from 'redux-form'
 import {submitStep, editStep} from '../actions'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import IgnoreStepButton from './Forms/IgnoreStepButton'
 import conversationData from '../conversation-steps'
 import {formValueSelector} from 'redux-form'
-import StepAnswer from './Forms/StepAnswer'
 
 
 /* Groups can be used only to avoid repeating conditions for all its children,
@@ -16,12 +14,10 @@ or to gather a set of questions that will be eventually collapsed to a final @va
 marked with the 'explicit' class  */
 @connect(state => ({
 	steps: state.steps,
-	formValue: field => formValueSelector('advancedQuestions')(state, field),
 	themeColours: state.themeColours
 }), dispatch => ({
 	editStep: name => dispatch(editStep(name)),
 	submitStep: (name, ignored) => dispatch(submitStep(name, ignored)),
-	setFormValue: (field, value) => dispatch(change('advancedQuestions', field, value)),
 }))
 export default class Group extends Component {
 

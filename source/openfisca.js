@@ -22,8 +22,10 @@ let serializeObject = source =>
 		.join('&')
 
 // Url pointing to an instance of the OpenFisca Web API and containing the desired output variables
+// Ex TN : https://api.openfisca.tn/api/2/formula/salaire_de_base?salaire_net_a_payer=3000
+		
 let baseUrl =
-	'https://api.openfisca.tn/api'
+	'https://api.openfisca.tn/api/2/formula/' +
 	//OpenFisca FR : 'https://embauche.beta.gouv.fr/openfisca/api/2/formula/' +
 	// output variables are extracted from the YAML file used to display them in the UI
 	Object.keys(outputVariables)
@@ -45,7 +47,7 @@ export function request(input) {
 	let
 		url =
 			baseUrl +
-			(input['salaire_net_a_payer'] ? '+salaire_de_base' : '+salaire_net_a_payer') +
+			//(input['salaire_net_a_payer'] ? '+salaire_de_base' : '+salaire_net_a_payer') +
 			'?' +
 			serializeObject(input),
 		headers = input['salaire_net_a_payer'] ? {

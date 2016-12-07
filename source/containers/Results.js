@@ -3,13 +3,13 @@ import { formValueSelector } from 'redux-form'
 import {connect} from 'react-redux'
 import Summary from '../components/Summary'
 import Details from '../components/Details'
+import BarChart from '../components/BarChart'
 import {TOGGLE_TOP_SECTION, TOGGLE_ADVANCED_SECTION} from '../actions'
 import './Results.css'
 
 let fmt = new Intl.NumberFormat('fr-FR').format
 
-let selector = formValueSelector('basicInput'),
-	advancedSelector = formValueSelector('advancedQuestions')
+let selector = formValueSelector('basicInput')
 
 @connect(state => ({
 	typeEntreprise: selector(state, 'typeEntreprise'),
@@ -30,11 +30,14 @@ export default class Results extends Component {
 			<div>
 				<Summary {...this.props} humanizeFigures={this.humanizeFigures(0)}/>
 				{this.props.showDetails &&
-					<Details
-						openAdvancedSection={this.props.openAdvancedSection}
-						advancedQuestions={this.props.advancedQuestions}
+					<div>
+						<Details
 						results={this.props.results}
 						humanizeFigures={this.humanizeFigures(2)} />
+						<BarChart 
+						results={this.props.results}
+						humanizeFigures={this.humanizeFigures(2)}/>
+					</div>
 				}
 			</div>
 		)
