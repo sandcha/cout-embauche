@@ -49,7 +49,7 @@ export default class Summary extends Component {
 						
 							Tunisie
 							<br />
-							Salaire imposable, IRPP, Revenu assimilé salaire après abattement. 
+							Où va votre impôt ?
 							<br />
 						
 						</p>

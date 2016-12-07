@@ -73,100 +73,131 @@ function draw(salaireDeBase, salaireNetAPayer) {
 	      }
 	    },
 	    series: [{
-	      name: 'presidence gouverment',
-	      data: [presidence_gouverment]
+	      name: 'Présidence du Gouverment',
+	      data: [presidence_gouverment],
+	      visible: true
 	    }, {
-	      name: 'presidence republique',
-	      data: [presidence_republique]
+	      name: 'Présidence de la République',
+	      data: [presidence_republique],
+	      visible: true
 	    }, {
-	      name: 'Ministère transport',
-	      data: [m_transport]
+	      name: 'Ministère du transport',
+	      data: [m_transport],
+	      visible: false
 	    }, {
-	      name: 'Ministère domaines etat affaires foncieres',
-	      data: [m_domaines_etat_affaires_foncieres]
+	      name: "Ministère des domaines de l'état et des affaires foncières",
+	      data: [m_domaines_etat_affaires_foncieres],
+	      visible: false
 	    }, {
-	      name: 'Ministère affaires sociales',
-	      data: [m_affaires_sociales]
+	      name: 'Ministère des affaires sociales',
+	      data: [m_affaires_sociales],
+	      visible: false
 	    }, {
-	      name: 'Ministère affaires religieuses',
-	      data: [m_affaires_religieuses]
+	      name: 'Ministère des affaires religieuses',
+	      data: [m_affaires_religieuses],
+	      visible: false
 	    }, {
-	      name: 'Ministère affaires etrangeres',
-	      data: [m_affaires_etrangeres]
+	      name: 'Ministère des affaires étrangères',
+	      data: [m_affaires_etrangeres],
+	      visible: false
 	    }, {
-	      name: 'Ministère sante',
-	      data: [m_sante]
+	      name: 'Ministère de la santé',
+	      data: [m_sante],
+	      visible: false
 	    }, {
-	      name: 'Ministère justice',
-	      data: [m_justice]
+	      name: 'Ministère de la justice',
+	      data: [m_justice],
+	      visible: false
 	    }, {
-	      name: 'Ministère jeunesse sports',
-	      data: [m_jeunesse_sports]
+	      name: 'Ministère de la jeunesse et des sports',
+	      data: [m_jeunesse_sports],
+	      visible: false
 	    }, {
-	      name: 'Ministère formation professionnelle emploi',
-	      data: [m_formation_professionnelle_emploi]
+	      name: "Ministère de la formation professionnelle et de l'emploi",
+	      data: [m_formation_professionnelle_emploi],
+	      visible: false
 	    }, {
-	      name: 'Ministère femme famille enfance',
-	      data: [m_femme_famille_enfance]
+	      name: "Ministère de la femme, de la famille et de l'enfance",
+	      data: [m_femme_famille_enfance],
+	      visible: true
 	    }, {
-	      name: 'Ministère culture sauvegarde patrimoine',
-	      data: [m_culture_sauvegarde_patrimoine]
+	      name: 'Ministère de la culture et de la sauvegarde du patrimoine',
+	      data: [m_culture_sauvegarde_patrimoine],
+	      visible: false
 	    }, {
-	      name: 'Ministère commerce',
-	      data: [m_commerce]
+	      name: 'Ministère du commerce',
+	      data: [m_commerce],
+	      visible: true
 	    }, {
-	      name: 'Ministère tech com economie numerique',
-	      data: [m_tech_com_economie_numerique]
+	      name: "Ministère des technologies, de la communication et de l'économie numérique",
+	      data: [m_tech_com_economie_numerique],
+	      visible: true
 	    }, {
-	      name: 'Ministère finances',
-	      data: [m_finances]
+	      name: 'Ministère des finances',
+	      data: [m_finances],
+	      visible: true
 	    }, {
-	      name: 'Ministère defense_nationale',
-	      data: [m_defense_nationale]
+	      name: 'Ministère de la défense nationale',
+	      data: [m_defense_nationale],
+	      visible: true
 	    }, {
-	      name: 'isie',
-	      data: [isie]
+	      name: 'ISIE',
+	      data: [isie],
+	      visible: true
 	    }, {
-	      name: 'ivd',
-	      data: [ivd]
+	      name: 'IVD',
+	      data: [ivd],
+	      visible: true
 	    }, {
 	      name: 'Dette publique',
-	      data: [dette_publique]
+	      data: [dette_publique],
+	      visible: true
 	    }, {
-	      name: 'Depenses imprevues non reparties',
-	      data: [depenses_imprevues_non_reparties]
+	      name: 'Depenses imprévues et non réparties',
+	      data: [depenses_imprevues_non_reparties],
+	      visible: true
 	    }, {
-	      name: 'Conseil surp. de la magistrature',
-	      data: [csm]
+	      name: 'Conseil supérieur de la magistrature',
+	      data: [csm],
+	      visible: true
 	    }, {
-	      name: 'Assemblée des Représentants du peuple',
-	      data: [arp]
+	      name: 'Assemblée des représentants du peuple',
+	      data: [arp],
+	      visible: true
 	    }, {
-	      name: 'Ministère tourisme artisanat',
-	      data: [m_tourisme_artisanat]
+	      name: "Ministère du tourisme et de l'artisanat",
+	      data: [m_tourisme_artisanat],
+	      visible: true
 	    }, {
-	      name: 'Ministère dev invest coop',
-	      data: [m_dev_invest_coop]
+	      name: "Ministère du développement, de l'investissement et de la coopération internationale",
+	      data: [m_dev_invest_coop],
+	      visible: true
 	    }, {
-	      name: 'Ministère interieur',
-	      data: [m_interieur]
+	      name: "Ministère de l'intérieur",
+	      data: [m_interieur],
+	      visible: true
 	    }, {
-	      name: 'Ministère argriculture res hydrauliques peche',
-	      data: [m_argriculture_res_hydrauliques_peche]
+	      name: "Ministère de l'argriculture, des ressources hydrauliques et de la pêche",
+	      data: [m_argriculture_res_hydrauliques_peche],
+	      visible: true
 	    }, {
-	      name: 'Ministère industrie energie mines',
-	      data: [m_industrie_energie_mines]
+	      name: "Ministère de l'industrie, de l'énergie et des mines",
+	      data: [m_industrie_energie_mines],
+	      visible: true
 	    }, {
 	      name: 'Ministère equipement habitat amenagement territoire',
-	      data: [m_equipement_habitat_amenagement_territoire]
+	      data: [m_equipement_habitat_amenagement_territoire],
+	      visible: true
 	    }, {
-	      name: 'Ministère du Developpement durable',
-	      data: [m_env_developpement_durable]
+	      name: "Ministère de l'environnement et du développement durable",
+	      data: [m_env_developpement_durable],
+	      visible: true
 	    }, {
-	      name: 'Ministrère Enseignement sup. recherche scientifique',
-	      data: [m_enseignement_sup_recherche_scientifique]
+	      name: "Ministrère de l'enseignement supérieur et de la recherche scientifique",
+	      data: [m_enseignement_sup_recherche_scientifique],
+	      visible: true
 	    }, {
-	      name: 'Ministère Education',
+	      name: "Ministère de l'éducation",
 	      data: [m_education],
 	      visible: true
 	    }]
@@ -180,6 +211,7 @@ export default class BarChart extends Component {
 	
 		return (
 				<ReactHighcharts config = {draw(salaireImposable, salaireNetAPayer)}></ReactHighcharts>
+				//<ReactHighcharts config = {draw(5000, 4000)}></ReactHighcharts>
 				)
 	}
 }
