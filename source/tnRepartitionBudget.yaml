@@ -3,67 +3,100 @@
 2016:
 
   - key: arp
+    name : ASSEMBLEE DES REPRESENTANTS DU PEUPLE
     percentage: 2 
   - key: csm
+    name : CONSEIL SUPERIEUR DE LA MAGISTRATURE
     percentage: 2 
   - key: depenses_imprevues_non_reparties
+    name : DEPENSES IMPREVUES ET NON REPARTIES
     percentage: 2
   - key: dette_publique
+    name : DETTE PUBLIQUE
     percentage: 2
   - key: ivd
+    name : INSTANCE DE LA VERITE ET DE LA DIGNITE
     percentage: 2 
   - key: isie
+    name : INSTANCE SUPERIEURE INDEPENDANTE POUR LES ELECTIONS
     percentage: 2 
   - key: m_argriculture_res_hydrauliques_peche
+    name : MINISTERE DE L&#39;AGRICULTURE, DES RESSOURCES HYDRAULIQUES ET DE LA PECHE
     percentage: 5
   - key: m_education
+    name : MINISTERE DE L&#39;EDUCATION
     percentage: 17
   - key: m_enseignement_sup_recherche_scientifique
+    name : MINISTERE DE L&#39;ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE SCIENTIFIQUE
     percentage: 8
   - key: m_env_developpement_durable
+    name : MINISTERE DE L&#39;ENVIRONNEMENT ET DU DEVELOPPEMENT DURABLE
     percentage: 8
   - key: m_equipement_habitat_amenagement_territoire
+    name : MINISTERE DE L&#39;EQUIPEMENT, DE L&#39;HABITAT ET DE L&#39;AMENAGEMENT DU TERRITOIRE
     percentage: 8
   - key: m_industrie_energie_mines
+    name : MINISTERE DE L&#39;INDUSTRIE, DE L&#39;ENERGIE ET DES MINES
     percentage: 8
   - key: m_interieur
+    name : MINISTERE DE L&#39;INTERIEUR
     percentage: 5
   - key: m_culture_sauvegarde_patrimoine
+    name : MINISTERE DE LA CULTURE ET DE LA SAUVEGARDE DU PATRIMOINE
+MINISTERE DE LA CULTURE ET DE LA SAUVEGARDE DU PATRIMOINE
     percentage: 1
   - key: m_defense_nationale
+    name : MINISTERE DE LA DEFENSE NATIONALE
     percentage: 2
   - key: m_femme_famille_enfance
+    name : MINISTERE DE LA FEMME, DE LA FAMILLE ET DE L&#39;ENFANCE
     percentage: 1
   - key: m_formation_professionnelle_emploi
+    name : MINISTERE DE LA FORMATION PROFESSIONNELLE ET DE L&#39;EMPLOI
     percentage: 1
   - key: m_jeunesse_sports
+    name : MINISTERE DE LA JEUNESSE ET DES SPORTS
     percentage: 1
   - key: m_justice
+    name : MINISTERE DE LA JUSTICE
     percentage: 1
   - key: m_sante
+    name : MINISTERE DE LA SANTE
     percentage: 1    
   - key: m_affaires_etrangeres
+    name : MINISTERE DES AFFAIRES ETRANGERES
     percentage: 1
   - key: m_affaires_religieuses
+    name : MINISTERE DES AFFAIRES RELIGIEUSES
     percentage: 1
   - key: m_affaires_sociales
+    name : MINISTERE DES AFFAIRES SOCIALES
     percentage: 1    
   - key: m_domaines_etat_affaires_foncieres
+    name : MINISTERE DES DOMAINES DE L&#39;ETAT ET DES AFFAIRES FONCIERES
     percentage: 1
   - key: m_finances
+    name : MINISTERE DES FINANCES
     percentage: 2
   - key: m_tech_com_economie_numerique
+    name : MINISTERE DES TECHNOLOGIES DE LA COMMUNICATION ET DE L&#39;ECONOMIE NUMERIQUE
     percentage: 2    
   - key: m_commerce
+    name : MINISTERE DU COMMERCE
     percentage: 2
   - key: m_dev_invest_coop
+    name : MINISTERE DU DEVELOPPEMENT, DE L&#39;INVESTISSEMENT ET DE LA COOPERATION INTERNATIONALE
     percentage: 5
   - key: m_tourisme_artisanat
+    name : MINISTERE DU TOURISME ET DE L&#39;ARTISANAT
     percentage: 3 
   - key: m_transport
+    name : MINISTERE DU TRANSPORT
     percentage: 1 
   - key: presidence_republique
+    name : PRESIDENCE DE LA REPUBLIQUE
     percentage: 1      
   - key: presidence_gouverment
+    name : PRESIDENCE DU GOUVERNEMENT
     percentage: 1 
      
