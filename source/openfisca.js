@@ -25,8 +25,10 @@ let serializeObject = source =>
 // Ex TN : https://api.openfisca.tn/api/2/formula/salaire_de_base?salaire_net_a_payer=3000
 		
 let baseUrl =
-	'https://api.openfisca.tn/api/2/formula/' +
 	//OpenFisca FR : 'https://embauche.beta.gouv.fr/openfisca/api/2/formula/' +
+	//OpenFisca TN : 'https://api.openfisca.tn/api/2/formula/2016/salaire_imposable?salaire_net_a_payer=14700' +
+	'https://api.openfisca.tn/api/2/formula/2016/' +
+	
 	// output variables are extracted from the YAML file used to display them in the UI
 	Object.keys(outputVariables)
 		.reduce((final, category) =>
@@ -48,12 +50,16 @@ export function request(input) {
 		url =
 			baseUrl +
 			//(input['salaire_net_a_payer'] ? '+salaire_de_base' : '+salaire_net_a_payer') +
-			'?' + 'period=2017&' +
+			//'?' + 'period=2017&' +
+			'?' + 
 			serializeObject(input),
 		headers = input['salaire_net_a_payer'] ? {
 			'x-OpenFisca-Extensions': 'de_net_a_brut',
 		} : {}
-
+	
+	console.log(url)
+	
+	
 	return new Promise( (resolve, reject) =>
 		fetch(url, {headers})
 			.then(response => {

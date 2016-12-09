@@ -12,18 +12,20 @@ function* handleFormChange() {
 
 	/* debounce by 500ms : don't make 10 network requests if the user changes
 	the salary incrementally from 3000 to 3010 */
-	yield call(delay, 500)
+	//yield call(delay, 500)
+	yield call(delay, 700)
 
 	try {
 
 		let
 			basicValues = yield select(state => state.form.basicInput.values),
-			advancedValues =
-				yield	select(state =>
-					(state.form.advancedQuestions && state.form.advancedQuestions.values) || {}
-				),
-			validationErrors = validate(advancedValues)
-
+			//advancedValues =
+			//	yield	select(state =>
+			//		(state.form.advancedQuestions && state.form.advancedQuestions.values) || {}
+			//	),
+			//validationErrors = validate(advancedValues)
+			validationErrors = false
+			
 		// there is a form validation error -> do not update
 		if (Object.keys(validationErrors).length)
 			return
@@ -31,19 +33,23 @@ function* handleFormChange() {
 		/* 	The simulation is made with the basic and avanced input values
 				But if the user input is unset yet or invalid, use the default step value
 		*/
-		let defaultAdvancedValues =
-			Object.keys(steps).reduce((final, name) => {
-				let {defaultValue} = steps[name]
-				return (
-					defaultValue && (advancedValues[name] == null || validationErrors[name])
-				) ?	{...final, [name]: defaultValue}
-						: final
-			}, {}),
-			inputValues = Object.assign({},
-				basicValues,
-				advancedValues,
-				defaultAdvancedValues
-			),
+		let inputValues = Object.assign({},
+				basicValues	
+		),
+		
+//		let defaultAdvancedValues =
+//			Object.keys(steps).reduce((final, name) => {
+//				let {defaultValue} = steps[name]
+//				return (
+//					defaultValue && (advancedValues[name] == null || validationErrors[name])
+//				) ?	{...final, [name]: defaultValue}
+//						: final
+//			}, {}),
+//			inputValues = Object.assign({},
+//				basicValues,
+//				advancedValues,
+//				defaultAdvancedValues
+//			),
 			// Transform the raw input data to a new one tailored for the simulation API
 			transformedValues = Object.keys(steps).reduce((final, name) => {
 				let step = steps[name],

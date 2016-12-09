@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
-import ReactHighcharts from 'react-highcharts' // Expects that Highcharts was
-												// loaded in the code.
+import ReactHighcharts from 'react-highcharts' // Expects that Highcharts was loaded in the code.
 
 
-function draw(salaireDeBase, salaireNetAPayer) {
+function draw(salaireImposable, salaireNetAPayer) {
 	
 	// variable qui recoit le montant d'impot payé
-	var salaire_de_base= salaireDeBase
+	var salaire_imposable= salaireImposable
 	var salaire_net_a_payer= salaireNetAPayer
-	var impot = salaire_de_base-salaire_net_a_payer
+	var impot = salaire_imposable-salaire_net_a_payer
 	
 	// affectation distribution impôts par dépense
 	var m_education = 0.17 * impot
@@ -51,7 +50,7 @@ function draw(salaireDeBase, salaireNetAPayer) {
 	      type: 'bar'
 	    },
 	    title: {
-	      text: 'Imposition de : '+(salaireDeBase - salaireNetAPayer) + ' dinars'
+	      text: 'Salaire imposable : '+salaireImposable+' / Salaire net à payer : '+salaireNetAPayer+' / Imposition de : '+(salaireImposable - salaireNetAPayer) + ' dinars'
 	    },
 	    xAxis: {
 	      categories: ['Vos impôts contribuent au']
@@ -208,11 +207,12 @@ function draw(salaireDeBase, salaireNetAPayer) {
 export default class BarChart extends Component {
 	render() {
 		let salaireImposable = this.props.results.salaire_imposable,
-		salaireNetAPayer = this.props.results.salaire_net_a_payer
-	
+		//salaireNetAPayer = this.props.results.salaire_net_a_payer
+		salaireNetAPayer = 14700
+		
 		return (
-				//<ReactHighcharts config = {draw(salaireImposable, salaireNetAPayer)}></ReactHighcharts>
-				<ReactHighcharts config = {draw(17710, 14700)}></ReactHighcharts>
+				<ReactHighcharts config = {draw(salaireImposable, salaireNetAPayer)}></ReactHighcharts>
+				//<ReactHighcharts config = {draw(17710, 14700)}></ReactHighcharts>
 				)
 	}
 }

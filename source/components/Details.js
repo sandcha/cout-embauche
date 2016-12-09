@@ -27,10 +27,13 @@ export default class Details extends Component {
 
 	renderItem(i) {
 		let
-			{results, humanizeFigures, advancedQuestions, openAdvancedSection} = this.props,
-			{key, name, explained, clarifier} = i,
-			figure = results[key],
-			lineClarified = advancedQuestions(clarifier) != null
+			//{results, humanizeFigures, advancedQuestions, openAdvancedSection} = this.props,
+		    {results, humanizeFigures} = this.props,
+			
+		    {key, name, explained, clarifier} = i,
+			figure = results[key]
+			
+			//lineClarified = advancedQuestions(clarifier) != null
 
 		return (
 			<tbody key={key} className={explained ? 'explained': ''}>
@@ -41,9 +44,9 @@ export default class Details extends Component {
 				{explained && !lineClarified && <tr>
 					<td colSpan="100%" className="explanation">
 						<p>{explained}</p>
-						{clarifier && <p>
-							<a href="#" onClick={openAdvancedSection}>Affinez votre situation</a>
-						</p>}
+						//{clarifier && <p>
+						//	<a href="#" onClick={openAdvancedSection}>Affinez votre situation</a>
+						//</p>}
 					</td>
 				</tr>}
 			</tbody>
